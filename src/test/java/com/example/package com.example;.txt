@@ -1,0 +1,13 @@
+package com.example;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class AdditionTest {
+
+    @Test
+    public void testAddition() {
+        Addition obj = new Addition();
+        assertEquals(30, obj.add(10, 20));
+    }
+}
