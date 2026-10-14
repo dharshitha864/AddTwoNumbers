@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.12'
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -23,11 +27,8 @@ pipeline {
 
     post {
         always {
-            junit 'target/surefire-reports/TEST-*.xml'
-        }
-
-        success {
-            echo 'Java Maven project completed successfully!'
+            junit testResults: 'target/surefire-reports/TEST-*.xml',
+                  allowEmptyResults: true
         }
     }
 }
