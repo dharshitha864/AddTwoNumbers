@@ -10,4 +10,16 @@ public class AdditionTest {
         Addition obj = new Addition();
         assertEquals(30, obj.add(10, 20));
     }
+
+    @Test
+    public void testAdditionWithZero() {
+        Addition obj = new Addition();
+        assertEquals(5, obj.add(5, 0));
+    }
+
+    @Test
+    public void testNegativeNumbers() {
+        Addition obj = new Addition();
+        assertEquals(-5, obj.add(-2, -3));
+    }
 }
